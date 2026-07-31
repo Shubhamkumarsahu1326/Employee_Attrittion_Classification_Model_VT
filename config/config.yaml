@@ -1,0 +1,22 @@
+artifacts:
+  root_dir: artifacts
+  data_ingestion:
+    raw_train_path: data/raw/train.csv
+    raw_test_path: data/raw/test.csv
+    validated_train_path: artifacts/data_validation/train_clean.csv
+    validated_test_path: artifacts/data_validation/test_clean.csv
+  model_trainer:
+    model_dir: model
+    model_path: model/best_rf.joblib
+    encoder_path: model/rf_onehot_encoder.joblib
+
+mlflow:
+  experiment_name: "HR-Attrition-Prediction"
+  tracking_uri: "http://localhost:5000"
+
+model_params:
+  RandomForest:
+    n_estimators: 100
+    max_depth: 10
+    min_samples_split: 2
+    random_state: 42
