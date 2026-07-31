@@ -9,10 +9,11 @@ artifacts:
     model_dir: model
     model_path: model/best_rf.joblib
     encoder_path: model/rf_onehot_encoder.joblib
-
+    
 mlflow:
   experiment_name: "HR-Attrition-Prediction"
-  tracking_uri: "http://localhost:5000"
+  tracking_uri: "http://127.0.0.1:5000"
+
 
 model_params:
   RandomForest:
