@@ -11,3 +11,9 @@ model/
 *.pkl
 .vscode/
 .idea/
+# MLflow local tracking databases and run artifacts
+mlflow.db
+mlruns/
+.env
+# Exclude ad-hoc test predictions
+inference_*.csv

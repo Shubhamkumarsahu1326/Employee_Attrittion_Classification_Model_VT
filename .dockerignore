@@ -1,0 +1,15 @@
+# Exclude Python environment and local caches
+.mlopsenv/
+__pycache__/
+*.py[cod]
+.git/
+.dvc/
+
+# Exclude local logs and ad-hoc outputs
+logs/
+artifacts/
+
+# Exclude local configuration secrets
+.env
+.env.*
+test_mlflow.py

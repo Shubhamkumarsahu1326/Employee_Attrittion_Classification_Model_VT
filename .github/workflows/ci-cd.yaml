@@ -1,0 +1,38 @@
+name: MLOps Continuous Integration and Delivery Workflow
+
+# Trigger boundaries: Run on every commit push or pull request hitting the master/main branch
+on:
+  push:
+    branches: [ master, main ]
+  pull_request:
+    branches: [ master, main ]
+
+jobs:
+  continuous-integration-verification:
+    runs-on: ubuntu-latest
+
+    steps:
+    # 1. Pull the codebase into the virtual engine runner environment
+    - name: Checkout Code Repository
+      uses: actions/checkout@v4
+
+    # 2. Spin up an isolated production Python runtime layer
+    - name: Set Up Python Environment Runtime
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.11'
+        cache: 'pip' # Automatically caches downloaded dependencies to optimize speed
+
+    # 3. Install required packages matching requirements text allocations
+    - name: Install Project Dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+        pip install pytest httpx  # Ensure testing suite tools are available
+
+    # 4. Execute the absolute reindexing guardrails testing matrices
+    - name: Run Modular Verification Test Suite Tree
+      env:
+        PYTHONPATH: .
+      run: |
+        python -m pytest tests/

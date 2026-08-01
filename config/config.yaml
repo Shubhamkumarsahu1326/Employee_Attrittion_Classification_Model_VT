@@ -21,3 +21,11 @@ model_params:
     max_depth: 10
     min_samples_split: 2
     random_state: 42
+
+# Add this block at the very bottom of your existing config.yaml file
+aws_storage:
+  s3_bucket_name: "mlopss3rfv1"   # Change this if your bucket name is unique
+  model_backup_dir: "production_models/"
+  inference_logs_dir: "live_inference_logs/"
+  aws_region: "ap-south-1"                       # Verify your bucket region
+
