@@ -1,0 +1,19 @@
+.mlopsenv/
+.mlopsenv/**
+**/.mlopsenv/
+__pycache__/
+**/__pycache__/
+logs/
+data/
+artifacts/
+model/
+*.joblib
+*.pkl
+.vscode/
+.idea/
+
+mlflow.db
+mlruns/
+.env
+# Exclude ad-hoc test predictions
+inference_*.csv
